@@ -1,5 +1,14 @@
 # rub-arwi
 
+
+H~2~O
+
+X^2^
+
+H<sub>2</sub>O
+
+H<sup>2</sup>O
+
 by [[Vorname Nachname]] (mailto:vorname.nachname@rub.de)
 
 ```
@@ -10,7 +19,7 @@ by [[Vorname Nachname]] (mailto:vorname.nachname@rub.de)
 }
 ```
 
-X^2^ 
+X^2^
 
  	H~2~O 
 
