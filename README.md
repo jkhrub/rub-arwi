@@ -1,5 +1,6 @@
 # rub-arwi
 
+![Rub_logo](https://www.archwiss.ruhr-uni-bochum.de/aw/mam/images/logo.png)
 
 H~2~O
 
