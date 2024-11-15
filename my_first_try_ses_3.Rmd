@@ -1,0 +1,17 @@
+---
+title: "Session 3 Tasks"
+author: "jkhrub"
+date: "2024-11-15"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+df <- data.frame(x = 1:30, y = rep(c("A", "B", "C"), 10), z = rep(c(TRUE, FALSE), 15))
+
+print(df)
+```
+
