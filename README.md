@@ -1,5 +1,7 @@
 # rub-arwi
 
+by Vorname Nachname (vorname.nachname(at)rub.de)
+
 ```
 {
   "firstName": "John",
