@@ -6,3 +6,5 @@ lorem ipsum
 | ----------- | ----------- |
 | Header | Title |
 | Paragraph | Text | 
+
+How to apply a style?
