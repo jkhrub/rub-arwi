@@ -1,6 +1,6 @@
 # rub-arwi
 
-by Vorname Nachname (vorname.nachname(at)rub.de)
+by [[Vorname Nachname]] (vorname.nachname@rub.de)
 
 ```
 {
