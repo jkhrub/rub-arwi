@@ -9,7 +9,6 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-
 ```{r}
 
 
@@ -29,8 +28,50 @@ stone_tools_data
 knitr::kable(stone_tools_data)
 ```
 
+Save it as a CSV file (stored in a “data” subdirectory) and load it back as a new R object (e.g. “stone_tools_data2”).
+
 ```{r}
 # Base R
 write.csv(stone_tools_data, "data/stone_tools_data.csv")
+```
+
+Compare.
+
+```{r}
+stone_tools_data2 <- read.csv("data/stone_tools_data.csv")[,-1]
+```
+
+
+Create a plot showing the counts of objects made of chert and obsidian. 
+
+```{r}
+# Base R
+stone_tools_data_table_type <- table(stone_tools_data$material_type)
+png("plots/session3_barplot_barplot.png")
+barplot(stone_tools_data_table_type,
+        main = "Bar Plot of count ...",
+        xlab = "Material type ",
+        )
+
+dev.off()
+```
+Create a new variable (“type_and_provenance”) that combines type and provenance and create a plot showing the counts in each category. Save it as a PNG file in “plots” subdirectory.
+
+```{r}
+stone_tools_data$type_and_provenance <- paste(stone_tools_data$material_type, stone_tools_data$material_provenance, sep = " and ")
+
+```
+
+Create a single figure displaying the variable distribution of the three dimensions measured. Save it as both a PNG and a SVG file in “plots” subdirectory.
+
+```{r}
+stone_tools_data_table_type_and_provenance <- table(stone_tools_data$type_and_provenance)
+#png("plots/session3_barplot_type_and_provenance.png")
+barplot(stone_tools_data_table_type_and_provenance,
+        main = "Bar Plot of count of artifacts by material type and provenance",
+        xlab = "Material type and provenance",
+        )
+
+#dev.off()
 ```
 
