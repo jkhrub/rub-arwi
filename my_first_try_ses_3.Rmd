@@ -1,17 +1,73 @@
----
-title: "Session 3 Tasks"
-author: "jkhrub"
-date: "2024-11-15"
-output: html_document
----
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
-```{r}
+add_numbers <- function(a, b) {
+  return(a + b)
+}
+
+result <- add_numbers(3, 15)
+print(result)
+
+x <- 10
+if (x > 5) {
+  print("x is greater than 5")
+} else {
+  print("x is not greater than 5")
+}
+
+x <- c("First", "Second", "Third", "Fourth", "Fifth")
+# iterate over numeric index, created on the fly
+for (i in seq_along(x)) {
+  print(x[i])
+}
+
+# iterate over the values of x directly
+for (value in x) {
+  print(value)
+}
+
+# Simple R Script
+x <- 5
+y <- 10
+sum <- x + y
+print(sum)
+
+install.packages("tidyverse")
+install.packages("tesselle")
+library(tidyverse)
+
+# Base R
+data <- read.csv("mycsv.csv")
+
+# Using readr package (installation required)
+library(readr)
+data <- read_csv("mycsv.csv")
+
+# Load the built-in iris dataset
+data(iris)
+
+# Load the DartPoints dataset from the archdata package
+library(archdata)
+data("DartPoints")
+
+
+# Find out how many columns the iris dataset have 
+ncol(iris)
+
+df <- data.frame(x = 1:3, y = 4:6)
+df # print it in the console
+
+# Adding a column
+df$z <- 7:9  # Adding column using $
+df
+
+library(dplyr)
+
 df <- data.frame(x = 1:30, y = rep(c("A", "B", "C"), 10), z = rep(c(TRUE, FALSE), 15))
 
-print(df)
-```
+filtered_data <- df %>% filter(x > 10, y == "A")
+filtered_data
 
+filtered_data <- df filter(z)
+filtered_data
+
+df
