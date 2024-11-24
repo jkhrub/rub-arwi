@@ -10,6 +10,11 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
+library(ggplot2)
+```
+
+
+```{r}
 
 
 # Combining the vectors into a data frame
@@ -66,12 +71,23 @@ Create a single figure displaying the variable distribution of the three dimensi
 
 ```{r}
 stone_tools_data_table_type_and_provenance <- table(stone_tools_data$type_and_provenance)
-#png("plots/session3_barplot_type_and_provenance.png")
+png("plots/session3_barplot_type_and_provenance.png")
+#svg("plots/session3_barplot_type_and_provenance.svg")
 barplot(stone_tools_data_table_type_and_provenance,
         main = "Bar Plot of count of artifacts by material type and provenance",
         xlab = "Material type and provenance",
         )
 
 #dev.off()
+```
+
+Create a single figure displaying the variable distribution of the three dimensions measured. Save it as both a PNG and a SVG file in “plots” subdirectory.
+
+```{r}
+png("plots/session3_barplot_type_and_provenance_ggplot2.png", width = 700)
+svg("plots/session3_barplot_type_and_provenance_ggplot2.svg")
+ggplot(stone_tools_data, aes(x = type_and_provenance)) + 
+  geom_bar() + 
+  labs(title = "Bar plot of type and provenance", x = "Blade Shape categories")
 ```
 
