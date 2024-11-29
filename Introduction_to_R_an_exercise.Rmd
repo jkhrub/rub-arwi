@@ -13,7 +13,6 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 ```
 
-
 ```{r}
 
 
@@ -46,8 +45,7 @@ Compare.
 stone_tools_data2 <- read.csv("data/stone_tools_data.csv")[,-1]
 ```
 
-
-Create a plot showing the counts of objects made of chert and obsidian. 
+Create a plot showing the counts of objects made of chert and obsidian.
 
 ```{r}
 # Base R
@@ -60,6 +58,7 @@ barplot(stone_tools_data_table_type,
 
 dev.off()
 ```
+
 Create a new variable (“type_and_provenance”) that combines type and provenance and create a plot showing the counts in each category. Save it as a PNG file in “plots” subdirectory.
 
 ```{r}
@@ -70,6 +69,7 @@ stone_tools_data$type_and_provenance <- paste(stone_tools_data$material_type, st
 Create a single figure displaying the variable distribution of the three dimensions measured. Save it as both a PNG and a SVG file in “plots” subdirectory.
 
 ```{r}
+# 20241129
 stone_tools_data_table_type_and_provenance <- table(stone_tools_data$type_and_provenance)
 png("plots/session3_barplot_type_and_provenance.png")
 #svg("plots/session3_barplot_type_and_provenance.svg")
@@ -91,3 +91,84 @@ ggplot(stone_tools_data, aes(x = type_and_provenance)) +
   labs(title = "Bar plot of type and provenance", x = "Blade Shape categories")
 ```
 
+```{r}
+
+# 20241129 ######
+
+source("plots/source/plotting_functions.R")
+
+plot_name <- "C:/Users/jhunke/Documents/session3_dartpoints_ggplot3.png"
+
+
+
+#png(plot_name, width = 700, height = 300)
+
+
+three_histograms(variable_1 = stone_tools_data$thickness,
+                 variable_2 = stone_tools_data$breadth,
+                 variable_3 = stone_tools_data$thickness,
+                 variable_1_main = "fsfdsfd",
+                 variable_2_main = "fgdfdsagfsg",
+                 variable_3_main = "gdfgfds",
+                 variable_1_xlab = "variableAA 1",
+                 variable_2_xlab = "variableAAA 2",
+                 variable_3_xlab = "variableAAA 3"
+                 )
+
+
+knitr::include_graphics(plot_name)
+#dev.off()
+```
+
+# Überschrift 1. Grades
+
+## Überschrift 2. Grades
+
+###### Überschrift 6. Grades
+
+| Spalte 1 | Spalte 2 |
+|:---------|:--------:|
+| Zeile 1  | Zeile 2  |
+
+Text mit Fußnote[\^fußnote] Mein beliebiger Text [\^fußnote]: Mein Fußnotentext
+
+```{r}
+#png("plots/session3_dartpoint_ggplot2.png")
+#svg("plots/session3_dartpoints_ggplot2.svg")
+svg("C:/Users/jhunke/Documents/session3_dartpoints_ggplot2.svg")
+ggplot(stone_tools_data, aes(x = breadth, y = blength, colour="green", shape=inventory_number),colour="green") +
+```
+
+```{r}
+```
+
+```{r}
+```
+
+```{r}
+```
+
+```{r}
+geom_point(colour = "red", shape = 24) +
+  labs(title = "Length vs Width by Blade Shape 03")
+#, 
+#                       colour = "AAAAred", # use factor as it is, ggplot() will convert it into colours
+#                       shape = 23)) + # use factor as it is, ggplot() will convert it into shapes
+
+dev.off()
+
+```
+
+#fdsfdsfds
+
+```{r}
+
+plot_name <- "C:/Users/jhunke/Documents/session3_dartpoints_ggplot2.png"
+
+stone_tools_data_table_type_and_provenance <- table(stone_tools_data_table_type_and_provenance)
+
+
+
+knitr::include_graphics(plot_name)
+
+```
